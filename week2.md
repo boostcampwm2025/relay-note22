@@ -181,6 +181,44 @@ K013 류경록 : 미션 2. AI를 학습에 사용할 때 근거 레퍼런스 자
 
 - 🔥 이유: AI 자료들의 출처를 파악하여 더 확실한 학습을 하기 위해서 선택했다.
 
+<details>
+<summary>결과</summary>
+
+## 질문
+
+git clone의 원리에 대해 이해하고 싶어 너가 참고한 레퍼런스의 출처를 밝히면서 설명해줘
+
+## 답변
+
+```kotlin
+4. 주요 레퍼런스
+공식 Git 문서
+
+Git Internals: https://git-scm.com/book/en/v2/Git-Internals-Git-Objects
+Transfer Protocols: https://git-scm.com/book/en/v2/Git-Internals-Transfer-Protocols
+Pack Protocol: https://git-scm.com/docs/pack-protocol
+
+RFC 및 기술 명세
+
+Git Protocol Specification: https://github.com/git/git/blob/master/Documentation/technical/protocol-v2.txt
+Pack Format: https://github.com/git/git/blob/master/Documentation/technical/pack-format.txt
+
+심화 학습 자료
+
+"Building Git" by James Coglan: Git 내부 구조를 단계별로 구현하는 책
+"Pro Git" by Scott Chacon: 2장 Git Internals 부분이 특히 유용
+Git Source Code: https://github.com/git/git (특히 builtin/clone.c)
+```
+
+생각보다 출처가 명확하게 잘 나왔다.
+
+공식 레퍼런스에서 어떤 부분을 봐야 하는지, 어디에 무엇이 적혀있는지 갈피를 못 잡는 상황에서는 이런 식으로 AI에게 먼저 물어보고 제공받은 링크로 넘어가서 학습을 진행하는 것도 자료 탐색 시간을 크게 단축시켜주는 효과가 있을 것 같습니다.
+
+특히 좋은 점은 단순히 링크만 던져주는 게 아니라, 앞서 간단한 요약과 설명을 제공한 다음 레퍼런스를 제시하는 순서라는 것입니다. 이렇게 하면 그냥 AI의 말을 맹신하고 진행하는 것보다, AI가 요약해준 설명을 먼저 이해한 후 공식 레퍼런스로 들어가서 내용이 맞는지 틀린지 직접 검증할 수 있어서 훨씬 유용해 보입니다.
+
+</details>
+
+
 J028 김근선 : 미션 3 업그레이드 내용 (AI에게 학습 내용 정리를 토대로 가벼운 퀴즈를 내는 걸 부탁하기)
 
 - 🔥 이유: reference를 찾고 검증하는 미션 2도 흥미롭지만 학습한 내용을 토대로 퀴즈를 만들어보는 미션 3번를 통해 공부한 개념을 더욱 깊이 이해하고 싶다!
