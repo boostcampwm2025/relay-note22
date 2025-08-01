@@ -26,9 +26,9 @@
 ## 조사 내용
 
 - Reflectyl : AI 기반 감정 일기 앱
-- Replika : 대화 기반 성장 파트너 (https://aiproductmanager.tistory.com/1166)
-- 인공지능을 통한 의료 서비스, 믿을 수 있을까? : (https://xn--gpt-1n4o.io/chatgpt-as-your-personal-health-assistant/)
-- 옵시디언에 AI 도구 사용 : 지식 기록 https://alive-wong.tistory.com/88
+- [Replika : 대화 기반 성장 파트너](https://aiproductmanager.tistory.com/1166)
+- [인공지능을 통한 의료 서비스, 믿을 수 있을까?](https://xn--gpt-1n4o.io/chatgpt-as-your-personal-health-assistant/)
+- [옵시디언에 AI 도구 사용 : 지식 기록](https://alive-wong.tistory.com/88)
 
 
 ## 🧭 기존 미션 구성의 한계
@@ -44,7 +44,7 @@
 
 ---
 
-## 퀘스트
+## ✅ 퀘스트
 
 ### 1. **컨디션 코치 GPT**
 
