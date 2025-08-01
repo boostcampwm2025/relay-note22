@@ -218,37 +218,94 @@ Git Source Code: https://github.com/git/git (특히 builtin/clone.c)
 
 </details>
 
+---
 
 J028 김근선 : 미션 3 업그레이드 내용 (AI에게 학습 내용 정리를 토대로 가벼운 퀴즈를 내는 걸 부탁하기)
 
 - 🔥 이유: reference를 찾고 검증하는 미션 2도 흥미롭지만 학습한 내용을 토대로 퀴즈를 만들어보는 미션 3번를 통해 공부한 개념을 더욱 깊이 이해하고 싶다!
+
+<details>
+<summary>결과</summary>
+
+### ⚡️ 신경쓴 점
+
+이번주는 미션 개선하기가 포함되어 있는 만큼 제대된 학습이 중요하다고 생각했어요. 그래서 AI에게 학습정리.md를 토대로 한 퀴즈를 요청해서 제가 공부한 내용을 재차 확인하려고 했던 것 같아요. 저는 보통 학습할 때 제가 쉬운 말로 풀어서 다른 사람에게 설명할 수 있게끔 공부를 합니다. 그래서 AI가 제게 주는 퀴즈도 그런 포맷에 맞춰서 요청했던 것 같아요. 또 슬랙에 공유하고 싶어서 문제는 어렵지 않고 누구나 "도전해볼까?"하는 퀴즈를 받을 수 있도록 입력 프롬프트 작성을 신경썼습니다.
+
+추가로 이번 프로젝트에서는 다양한 문제 형식을 받는 걸 중요하게 생각했습니다. 예를 들어 "혹시 주관식, 객관식, 빈칸문제, O/X문제 등으로 해서 5문제 정도 간단하게 만들어줄 수 있어?" 라고 입력해서 variation을 줬습니다.
+
+### ⚡️ 수행 과정 및 슬랙 공유
+
+총 두 번의 퀴즈를 받아서 슬랙에 공유를 했습니다.
+
+- 첫 번째 퀴즈~!
+
+많은 분들이 참여하셨으면 해서 퀴즈를 푸신 분께 💯(백점)과 🏆(트로피)를 드린다는 조건을 추가했습니다.
+
+![img1](https://private-user-images.githubusercontent.com/155948612/473284081-a635192c-7bbf-4aa2-8987-e0b9164afe5e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTQwMjIyMjksIm5iZiI6MTc1NDAyMTkyOSwicGF0aCI6Ii8xNTU5NDg2MTIvNDczMjg0MDgxLWE2MzUxOTJjLTdiYmYtNGFhMi04OTg3LWUwYjkxNjRhZmU1ZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwODAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDgwMVQwNDE4NDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03ODMzMzlkZjRjNjdhMTZlMTQxYzljNjAwZjZmNWMwNzA5ZmM3YTBjODQ3M2VmMDliNmY2YzBiMTE2MjM2OWI1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.Ddf3DZzElUW0pxjX9YsQ-K8XdDtkN6JgDSs7_Zt7jHM)
+
+![img2](https://private-user-images.githubusercontent.com/155948612/473284070-4e43b2cb-3725-4500-9c28-17d8f2990b5e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTQwMjIyMjksIm5iZiI6MTc1NDAyMTkyOSwicGF0aCI6Ii8xNTU5NDg2MTIvNDczMjg0MDcwLTRlNDNiMmNiLTM3MjUtNDUwMC05YzI4LTE3ZDhmMjk5MGI1ZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwODAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDgwMVQwNDE4NDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0yZmExYzE4N2RkZDFkOTQyNDkxZjdkMmQ3ZDA4ZWZkZTI2Mzc0Zjg1ZTBhMGM4N2YyMzUxZmJlNWI3MWViOWRmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.FHkalje0__y6Qpwb79zqzRc9xlxKJXo2IN4Pn6gE33c)
+
+댓글로 많은 분들이 참여해주셨습니다ㅎㅎ! (JK님의 (머리가 안 식는 것 같아요)도 ㅋㅋ!!)
+
+### ⚡️ AI라고 완벽하지 않다.
+
+![ing](https://private-user-images.githubusercontent.com/155948612/473289607-90bec68b-ed43-48bb-9b19-b674ef132c45.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTQwMjM0OTYsIm5iZiI6MTc1NDAyMzE5NiwicGF0aCI6Ii8xNTU5NDg2MTIvNDczMjg5NjA3LTkwYmVjNjhiLWVkNDMtNDhiYi05YjE5LWI2NzRlZjEzMmM0NS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwODAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDgwMVQwNDM5NTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00ZTEyMTRiM2YwYzA4ZmNjOWExZmRjZWVlZWE4MWViNzcxM2MyODVkMzVlYzUwMWM2MjE4NGYxZDdiMjA2YTliJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.P1iQPJLophJ512RYIjPlO5Oa-BegCD_TzjYTf5f2lXs)
+
+첫 번째 퀴즈에서 첫 번째 문제의 오류를 댓글에서 여러 피어 분들께서 발견해주셨습니다. 제 릴레이 프로젝트 미션 내용에는 퀴즈에 대한 검증도 포함되어 있었고, 그걸 눈으로 확인한 순간이었습니다.
+
+AI는 똑똑하지만 항상 옳은 답을 제시하지는 않습니다. 그래서 개발자로서 AI를 사용할 때 항상 이런 교차 검증이 필요하다고 다시 한 번 깨달았습니다.
+
+- 두 번째 퀴즈~!
+
+![img3](https://private-user-images.githubusercontent.com/155948612/473290697-f6fba357-de81-4a87-ac70-ec18370431b7.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTQwMjM5MzIsIm5iZiI6MTc1NDAyMzYzMiwicGF0aCI6Ii8xNTU5NDg2MTIvNDczMjkwNjk3LWY2ZmJhMzU3LWRlODEtNGE4Ny1hYzcwLWVjMTgzNzA0MzFiNy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwODAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDgwMVQwNDQ3MTJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kMGY1YzEwYzgzYTZmZTcxZDRkYWExZDE5NzZmY2I1NDdkNjg1MWNhMDE3OWM3NDVkNGE4MGU5OGQzMGEyYTllJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.lTOJipJNAYisa6zNAOHGHdpTXb8hX-KoutS5MlWU8rI)
+
+월요일에 학습한 내용으로 퀴즈를 구성하여 리마인드의 목적을 두었습니다 ㅎㅎ😃
+
+![img4](https://private-user-images.githubusercontent.com/155948612/473290903-8a9516d8-6782-4ac4-b7de-4d739708b934.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTQwMjM5MzIsIm5iZiI6MTc1NDAyMzYzMiwicGF0aCI6Ii8xNTU5NDg2MTIvNDczMjkwOTAzLThhOTUxNmQ4LTY3ODItNGFjNC1iN2RlLTRkNzM5NzA4YjkzNC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwODAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDgwMVQwNDQ3MTJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0yYmFlODU5OWViN2I3N2I0YjczNTY5YzNmODRmOGQ1YTQ0MWE0NzYwYzRmNDdjMTJhMzVkZTFlNDVkNTkxYTgwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.i7AfRxQRu2ZG8_pM9zQ6MbUrjqoihf4TQRDfS1v3wyk)
+![img5](https://private-user-images.githubusercontent.com/155948612/473290948-66f54918-7c33-4434-be2f-7c50abbbecfc.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTQwMjM5MzIsIm5iZiI6MTc1NDAyMzYzMiwicGF0aCI6Ii8xNTU5NDg2MTIvNDczMjkwOTQ4LTY2ZjU0OTE4LTdjMzMtNDQzNC1iZTJmLTdjNTBhYmJiZWNmYy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwODAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDgwMVQwNDQ3MTJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zMTQ2NTA4MGIyNWE4ZDA2YjQxNGY2NzU2YzRmNmYzZjNiZDBjZDEwZTdjY2JhODhmOWRhMjc1OTM5MjM0ZDU1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.fXij3H0QvR07uNg4u9aRueX5il_BDBO0zPsM4nW18uo)
+
+저는 AI와 퀴즈를 만들면서 슬랙에 공유할 때, 피어분들이 퀴즈를 풀어 볼 마음이 생길수 있도록 너무 줄글이지 않은 다양한 문제들을 만들었는데요. 그러면서도 승원님이 댓글에서 짚어주신 것처럼 학습 중에서도 핵심 개념을 AI에게 요청해서 넣어봤습니다!
+
+### ⚡️ 후기 및 다음에 고려하면 좋을 점
+
+AI가 발전하고 그걸 활용하는 게 많이 당연시 된 것 같습니다. 하지만 AI라고 언제나 옳지는 않고 틀린 답을 내줄 때도 많은 것 같아요. 이번에 AI에게 퀴즈를 받으면서 학습을 할 수 있어서 도움이 됐지만, 첫 번째 퀴즈처럼 옳지 않은 지식을 학습할 수도 있다는 걸 경험했습니다. 이런 퀴즈 뿐만 아니라 다른 여러가지 방법으로 AI를 활용할 때도 항상 AI의 답변을 검증해야 한다는 생각을 가져야 될 것 같습니다. 만약 다음에 다른 피어분이 이 미션을 수행하게 된다면, 그리고 슬랙에 공유하게 된다면 퀴즈에 틀린 답을 심어두고 피어분들이 스스로 깨닫고 검증하는 경험을 할 수 있게 하면 많은 피어분들이 더 큰 인사이트를 얻을 것 같습니다. 물론 스스로 AI를 활용할 때도 더욱 경각식을 가지게 될 것이구요 ㅎㅎ!!
+
+</details>
+
+---
 
 J145 송의현 : 미션 3 업그레이드 내용 (AI에게 학습 내용 정리를 토대로 가벼운 퀴즈를 내는 걸 부탁하기)
 
 - 🔥 이유: 미션을 마무리하고 학습내용을 간단히 리마인드 하는 느낌으로 하면 좋을거 같아 선택
 
 <details>
-<summary>기록</summary>
+<summary>결과</summary>
 
 ### 퀴즈 1
-**문제:**  
-Git의 분산형 VCS에서는, 로컬에서 `git commit`을 수행해도 다른 사용자가 즉시 해당 변경 사항을 볼 수 있다. (O/X)  
 
-**정답:** ❌ X  
-- 분산형 VCS(Git)에서는 `git commit`은 **로컬 저장소에만 반영**됩니다.  
-- 다른 사용자가 보려면 `git push` 후, 상대방이 `git pull`을 해야 합니다.  
+**문제:**  
+Git의 분산형 VCS에서는, 로컬에서 `git commit`을 수행해도 다른 사용자가 즉시 해당 변경 사항을 볼 수 있다. (O/X)
+
+**정답:** ❌ X
+
+- 분산형 VCS(Git)에서는 `git commit`은 **로컬 저장소에만 반영**됩니다.
+- 다른 사용자가 보려면 `git push` 후, 상대방이 `git pull`을 해야 합니다.
 
 ---
 
 ### 퀴즈 2
+
 **문제:**  
 `git add` 명령어를 실행하면 Git은 파일 내용을 읽어 Blob 객체를 생성하고,  
-그 해시값을 **Index(Staging Area)**에 기록한다. (O/X)  
+그 해시값을 **Index(Staging Area)**에 기록한다. (O/X)
 
-**정답:** ✅ O  
-- `git add` 시 Git은 파일 내용을 읽어 **Blob 객체**를 만들고,  
-- 그 해시값을 **Index(Staging Area)**에 기록합니다.  
+**정답:** ✅ O
+
+- `git add` 시 Git은 파일 내용을 읽어 **Blob 객체**를 만들고,
+- 그 해시값을 **Index(Staging Area)**에 기록합니다.
+
 ---
+
 퀴즈 1
 문제:
 Node.js는 기본적으로 멀티 스레드 환경에서 동작하며, CPU 집약적 작업도 자동으로 여러 스레드에 분산된다. (O/X)
@@ -267,17 +324,18 @@ process.nextTick은 이벤트 루프에서 Promise의 .then() 콜백보다 늦�
 
 실행 순서: process.nextTick → Promise → setTimeout
 
-따라서 nextTick이 Promise보다 먼저 실행됩니다.
----
+## 따라서 nextTick이 Promise보다 먼저 실행됩니다.
 
 </details>
+
+---
 
 J211 이종혁 : 미션 2. AI를 학습에 사용할 때 근거 레퍼런스 자료를 요청하고 분석하기
 
 - 🔥 이유: AI의 레퍼런스 체크와 원본(과 비슷)한 자료로 추가학습을 위해서
 
 <details>
-<summary>기록</summary>
+<summary>결과</summary>
 
 JS의 원시데이터/참조 데이터에 대해서 딥리서치 기능으로 질문한 뒤, 레퍼런스를 한 트위터 글에서 가져온걸 확인함
 (링크)[https://x.com/finalchildmc/status/1664895964115607556]
@@ -351,4 +409,3 @@ V8 소스코드로 완전히 입증됨
 ```
 
 </details>
-
