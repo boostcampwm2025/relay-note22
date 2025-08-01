@@ -189,26 +189,29 @@ J145 송의현 : 미션 3 업그레이드 내용 (AI에게 학습 내용 정리�
 
 - 🔥 이유: 미션을 마무리하고 학습내용을 간단히 리마인드 하는 느낌으로 하면 좋을거 같아 선택
 
-<detail> <summary>0801</summary>
-퀴즈 1
-Git의 분산형 VCS에서는, 로컬에서 git commit을 수행해도 다른 사용자가 즉시 해당 변경 사항을 볼 수 있다. (O/X)
+<details>
+<summary>0801</summary>
+
+### 퀴즈 1
+**문제:**  
+Git의 분산형 VCS에서는, 로컬에서 `git commit`을 수행해도 다른 사용자가 즉시 해당 변경 사항을 볼 수 있다. (O/X)  
+
+**정답:** ❌ X  
+- 분산형 VCS(Git)에서는 `git commit`은 **로컬 저장소에만 반영**됩니다.  
+- 다른 사용자가 보려면 `git push` 후, 상대방이 `git pull`을 해야 합니다.  
+
 ---
- X
 
-분산형 VCS(Git)에서는 git commit은 로컬 저장소에만 반영됩니다.
+### 퀴즈 2
+**문제:**  
+`git add` 명령어를 실행하면 Git은 파일 내용을 읽어 Blob 객체를 생성하고,  
+그 해시값을 **Index(Staging Area)**에 기록한다. (O/X)  
 
-다른 사용자가 보려면 git push 후, 상대방이 git pull을 해야 합니다.
+**정답:** ✅ O  
+- `git add` 시 Git은 파일 내용을 읽어 **Blob 객체**를 만들고,  
+- 그 해시값을 **Index(Staging Area)**에 기록합니다.  
 
-퀴즈 2
-git add 명령어를 실행하면 Git은 파일 내용을 읽어 Blob 객체를 생성하고, 그 해시값을 **Index(Staging Area)**에 기록한다. (O/X)
----
-O
-
-git add 시 Git은 파일 내용을 읽어 Blob 객체를 만들고,
-
-그 해시값을 **Index(Staging Area)**에 기록합니다.
-
-</detail>
+</details>
 
 J211 이종혁 : 미션 2. AI를 학습에 사용할 때 근거 레퍼런스 자료를 요청하고 분석하기
 
