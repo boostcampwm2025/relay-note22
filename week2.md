@@ -211,6 +211,27 @@ Git의 분산형 VCS에서는, 로컬에서 `git commit`을 수행해도 다른 
 - `git add` 시 Git은 파일 내용을 읽어 **Blob 객체**를 만들고,  
 - 그 해시값을 **Index(Staging Area)**에 기록합니다.  
 ---
+퀴즈 1
+문제:
+Node.js는 기본적으로 멀티 스레드 환경에서 동작하며, CPU 집약적 작업도 자동으로 여러 스레드에 분산된다. (O/X)
+
+정답: ❌ X
+
+Node.js는 기본적으로 싱글 스레드입니다.
+
+CPU 병렬 처리를 위해서는 worker_threads 모듈로 별도 스레드를 생성해야 합니다.
+
+퀴즈 2
+문제:
+process.nextTick은 이벤트 루프에서 Promise의 .then() 콜백보다 늦게 실행된다. (O/X)
+
+정답: ❌ X
+
+실행 순서: process.nextTick → Promise → setTimeout
+
+따라서 nextTick이 Promise보다 먼저 실행됩니다.
+---
+
 </details>
 
 J211 이종혁 : 미션 2. AI를 학습에 사용할 때 근거 레퍼런스 자료를 요청하고 분석하기
