@@ -275,3 +275,80 @@ process.nextTick은 이벤트 루프에서 Promise의 .then() 콜백보다 늦�
 J211 이종혁 : 미션 2. AI를 학습에 사용할 때 근거 레퍼런스 자료를 요청하고 분석하기
 
 - 🔥 이유: AI의 레퍼런스 체크와 원본(과 비슷)한 자료로 추가학습을 위해서
+
+<details>
+<summary>기록</summary>
+
+JS의 원시데이터/참조 데이터에 대해서 딥리서치 기능으로 질문한 뒤, 레퍼런스를 한 트위터 글에서 가져온걸 확인함
+(링크)[https://x.com/finalchildmc/status/1664895964115607556]
+이를 검증하기 위해 AI를 활용하여 V8 소스코드를 교차검증함
+
+```
+파차의 주장과 V8 소스코드 검증 요약
+🎯 파차의 핵심 주장
+"JS에서 원시 값은 스택에 저장되지 않습니다"
+구체적 설명:
+
+기본 전략: 모든 값을 힙에 할당하고, 스택에는 포인터만 저장
+32비트 정수만 예외: V8에서 SMI(Small Integer)로 스택에 직접 저장
+Tagged Pointer 메커니즘: 64비트 공간에서 마지막 비트로 포인터/직접값 구분
+나머지 원시값: 문자열, 큰 정수, 부동소수점 등은 모두 힙에 저장
+
+📋 V8 소스코드로 확인된 증거들
+1. smi.h - 결정적 증거 ✅
+cpp// Smi represents integer Numbers that can be stored in 31 bits.
+// Smis are immediate which means they are NOT allocated in the heap.
+
+"NOT allocated in the heap" = 힙에 할당되지 않음
+"immediate" = 직접 저장됨
+
+2. tagged-impl.h - Tagged Pointer 시스템 ✅
+cppconstexpr bool IsSmi() const { return HAS_SMI_TAG(ptr_); }
+constexpr inline bool IsStrong() const {
+    return kCanBeWeak ? HAS_STRONG_HEAP_OBJECT_TAG(ptr_) : !IsSmi();
+}
+
+비트 태그로 Smi와 포인터 구분
+Smi가 아닌 것은 HeapObject 포인터
+
+3. string.h - 문자열은 힙 객체 ✅
+cppV8_OBJECT class String : public Name {
+V8_OBJECT class SeqOneByteString : public SeqString {
+FLEXIBLE_ARRAY_MEMBER(Char, chars);
+
+모든 문자열이 V8_OBJECT로 정의 = 힙 할당
+가변 크기 데이터로 동적 할당 필요
+
+4. objects.h - 전체 아키텍처 ✅
+cpp// Extract the double value of a Number (Smi or HeapNumber).
+static inline double NumberValue(Tagged<Number> obj);
+
+숫자도 Smi 또는 HeapNumber로 구분
+Tagged 시스템으로 모든 값 관리
+
+🎯 결론: 파차의 주장은 100% 정확함
+✅ 확인된 사실들:
+
+32비트 정수(Smi): 스택에 직접 저장 (NOT allocated in the heap)
+문자열: 모두 힙에 저장 (V8_OBJECT)
+큰 정수/부동소수점: HeapNumber로 힙에 저장
+Tagged Pointer: 비트 태그로 포인터/직접값 구분
+
+📚 교육적 의미:
+
+일반적인 오해: "원시값 = 스택, 객체 = 힙" ❌
+실제 V8 구현: "32비트 정수만 스택, 나머지는 힙" ✅
+성능 최적화: 가장 자주 쓰이는 32비트 정수만 특별 처리
+
+🏆 최종 평가:
+파차의 **"JS에서 원시 값은 스택에 저장되지 않습니다"**라는 표현은:
+
+기술적으로 정확함 (32비트 정수 예외 있지만)
+교육적으로 매우 유용함 (잘못된 통념 교정)
+V8 소스코드로 완전히 입증됨
+
+따라서 파차의 주장은 맞습니다! 🎯
+```
+
+</details>
+
