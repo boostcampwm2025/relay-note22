@@ -121,6 +121,144 @@ AI에게 학습 내용 정리를 토대로 가벼운 퀴즈를 내는 걸 부탁
 - 🔥 이유:
 - 미션 수행 → README 제출 → AI 피드백 → 다음 날 개선 이런식으로 매일매일 하다보면 계속해서 성장이 멈추지 않는 개발자가 될 수 있을거같다.
 - 회고를 작성할때 AI에게 초안을 작성해줘서 AI가 제공한 결과를 바탕으로 계획과 실천에 더 집중할 수 있다.
+
+<details>
+<summary>퀘스트 수행결과</summary>
+
+## day16-17
+  
+훌륭한 README입니다! 아래 네 단계로 정리해드릴게요.
+
+1. 회고 분석
+	•	학습 성과
+	•	벡터 DB의 기본 구조와 CRUD, K-NN 검색(브루트-포스/인덱싱) 방식을 직접 구현
+	•	Hugging Face 임베딩 파이프라인(all-MiniLM-L6-v2)과 JSON 기반 영속성 처리
+	•	대표 벡터(landmarks) 기반 간이 인덱싱 기법 도입으로 검색 후보군 축소
+	•	대용량 CSV 처리에서 스트리밍 I/O, 프로파일링(clinic.js) → 플레임 그래프 이해
+	•	메모리 사용량·실행시간 측정, “row 버퍼링” 제거로 메모리·성능 최적화
+	•	개선할 점
+	1.	차원 일반화 & 검증
+	•	현재 2D → 임의 차원 지원을 위한 벡터 길이 체크 및 예외 처리 강화
+	2.	모듈화 & 테스트 코드
+	•	거리 함수·인덱싱·CSV 로딩 등을 개별 모듈로 분리 후, Jest/Mocha 테스트 작성
+	3.	비동기 I/O 최적화
+	•	fs.writeFileSync 대신 비동기 API(fs.promises.writeFile)로 병목 완화
+	4.	검색 정확도 지표
+	•	단순 거리 외에 Precision@k, Recall@k 같은 평가 메트릭 도입
+	5.	사용성 개선
+	•	CLI 입력 검증, 진행률 표시 강화, 설정 파일(.env) 도입
+
+⸻
+
+2. 다음 미션용 개선 피드백
+	1.	차원·타입 안전성 추가
+	•	VectorDatabase 생성 시 dimension 속성 저장
+	•	add()에서 벡터 길이 일관성 검증, 잘못된 입력 시 예외 던지기
+	2.	단위 테스트 커버리지 확보
+	•	euclideanDistance, cosineSimilarity, CRUD, 인덱싱 로직에 대해 경계값 테스트 작성
+	•	CI 파이프라인(GitHub Actions 등)에 테스트 자동 실행 추가
+	3.	비동기 I/O 적용
+	•	.load()/.save()를 async/await 기반으로 전환하여 파일 쓰기 읽기 병렬화
+	4.	Approximate NN 도입 검토
+	•	HNSWJS, Annoy 같은 라이브러리 활용해 인덱싱 성능 비교 테스트
+	5.	메트릭 대시보드 구성
+	•	runPerformanceTest() 결과를 CSV/JSON으로 저장해 시각화 도구(Excel/파이썬/웹)에서 분석
+
+⸻
+
+3. 회고 정리문 (Slack/블로그/README용)
+
+# 벡터 DB 구현 회고
+
+✅ 무엇을 했나?
+	•	JS로 VectorDatabase 클래스 작성 (CRUD, JSON 영속성)
+	•	Hugging Face 임베딩과 브루트-포스·대표 벡터 기반 K-NN 검색 구현
+	•	대용량 CSV 스트리밍 처리, clinic.js 프로파일링으로 I/O 병목 파악
+-rows 버퍼링 제거로 메모리 사용량 80%↓, 실행 시간 10%↓ 달성
+
+🤔 느낀 점 & 배운 점
+	•	직접 손으로 구현해 보니 거리 함수마다 특성과 성능 차이가 크게 느껴짐
+	•	프로파일링을 통해 “문제는 내 로직이 아니라 파일 I/O”임을 명확히 확인
+	•	동기 vs 비동기 I/O, 단위 테스트의 중요성을 체감
+
+🚀 다음 목표
+	1.	차원 검증·예외 처리 강화
+	2.	비동기 I/O 전환 및 테스트 자동화
+	3.	Approximate NN 라이브러리 도입 비교
+
+⸻
+
+4. 변화 추적 플랜
+
+미션	개선 포인트	검증 방법	추적 지표
+1. 차원 안전성	벡터 길이 검사 예외	잘못된 벡터 추가 시 에러	테스트 케이스 통과 여부
+2. 비동기 I/O	fs.promises 사용 전환	프로파일링(메모리·CPU)	clinic.js 메트릭 비교
+3. 단위 테스트	거리 함수·CRUD 모듈 테스트	CI 빌드 상태	Test Coverage (%)
+4. Approximate NN	HNSW vs 브루트·인덱스	성능 테스트(runPerformanceTest)	검색 속도(ms), 정확도@10
+
+다음 미션에서 이 플랜에 따라 작업하시면, 매 단계마다 ‘변화’를 명확히 확인하실 수 있을 거예요. 화이팅입니다!
+
+## day 18-19
+
+1. 회고 분석
+
+✅ 학습 성과
+	•	TCP/UDP 멀티프로토콜 서버·클라이언트 구조 설계·구현
+	•	BaseClient/RefactorServer 로 코드 중복 제거 및 역할 분리(클라이언트 공통 로직, 명령어 라우터)
+	•	상태 관리: Map·객체로 고객·MD·쇼핑그룹·상품 목록 추적
+	•	프로토콜 정의: login/logout/catalog/buy/auth/add/broadcast
+	•	에러 처리: 유효성 검사(캠퍼ID, 상품ID·수량), 예외 대응, 잘못된 JSON 방어
+	•	확장성: constant.js로 설정 분리, commandHandlers 객체로 기능 추가 용이
+
+⚠️ 개선할 점
+	1.	단위 테스트 부재: 명령어 핸들러, BaseClient, RefactorServer 메서드별 테스트 필요
+	2.	로깅 & 모니터링: console.log 외에 레벨별 로거(winston 등) 도입, 요청/응답 메트릭 수집
+	3.	환경 설정 강화: 포트·토큰·그룹 크기 등 .env 관리, 기본값 및 예외 처리
+	4.	에러 코드 표준화: status “error”만 아니라, code·reason 필드 도입해 클라이언트 로직 간결화
+	5.	Graceful Shutdown: SIGINT 등 시퀀스 처리, 연결된 소켓 안전 종료
+
+⸻
+
+2. 다음 미션용 개선 피드백
+	1.	테스트 자동화
+	•	Jest/Mocha로 RefactorServer의 각 handler, RefactorCustomerClient·RefactorMdClient 메서드 단위 테스트 작성
+	•	CI 파이프라인(GitHub Actions)에 통합
+	2.	로거 도입 & 메트릭
+	•	winston 등 로거로 요청·응답·에러 레벨별 기록
+	•	prom-client로 접속 수·명령어 사용 빈도·에러율 수집
+	3.	환경 구성 관리
+	•	dotenv 활용해 포트·토큰·그룹 최대 인원 등 설정
+	•	잘못된 환경 변수 시 앱 기동 전 검증
+	4.	에러 코드·스키마 정의
+	•	공통 응답 스키마 추가 ({ command, status, code, message, payload })
+	•	클라이언트에서 code별 분기 처리 간소화
+	5.	유닛→통합 테스트 확대
+	•	실제 TCP/UDP 소켓을 열고 E2E 테스트(예: supertest + net.Socket)
+	•	로그인→catalog→buy→logout 시퀀스 자동 검증
+
+⸻
+
+3. 회고 정리문 (Slack/블로그/README용)
+
+# 부스트 쇼핑 서버·클라이언트 구현 회고
+
+✅ 무엇을 했나?
+	•	TCP·UDP 동시 처리 서버(RefactorServer)와 공통 클라이언트(BaseClient) 상속 구조 설계
+	•	고객·MD별 커맨드(login, buy, add, broadcast 등) 핸들러 구현
+	•	설정 분리(constant.js), Map 기반 상태 관리, JSON 프로토콜 방어 로직 작성
+
+🤔 느낀 점 & 배운 점
+	•	역할별 클래스 분리로 코드 유지보수성과 확장성이 크게 향상됨
+	•	명령어 라우팅 패턴(commandHandlers) 도입으로 신규 기능 추가가 단순해짐
+	•	환경 설정·로깅·에러 코드화의 중요성을 체감
+
+🚀 다음 목표
+	1.	단위·통합 테스트 자동화
+	2.	로거·메트릭 도구 도입
+	3.	환경 변수 관리·Graceful Shutdown 구현
+
+</details>
+
   
 ### K002 강예림
 건강한 조언 챗봇
